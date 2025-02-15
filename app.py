@@ -2,8 +2,11 @@ from flask import Flask, jsonify
 import asyncio
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+# CORS(app, resources={r"/*": {"origins": "https://colorfulnia.github.io"}})
 
 URL = "https://developer.android.com/build/releases/gradle-plugin"
 
